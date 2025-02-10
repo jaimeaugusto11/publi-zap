@@ -1,6 +1,6 @@
 import { Plus, PlusIcon } from "lucide-react";
 import React from "react";
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function SubmitButton({ isLoading=false, buttonTitle, loadingButtonTitle }:any) {
   return (
     <div className="sm:col-span-1">

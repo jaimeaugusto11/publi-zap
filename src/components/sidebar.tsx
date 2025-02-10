@@ -5,7 +5,7 @@ import Link from "next/link";
 import logo from "../../public/img/baseLogo.png"
 
 import React from "react";
-import { usePathname } from "next/navigation";
+//import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
 

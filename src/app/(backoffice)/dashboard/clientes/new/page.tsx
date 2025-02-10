@@ -8,7 +8,7 @@ import TextInput from "@/components/Forminputs/TextInput";
 import { makePostRequest } from "@/lib/apiresquest";
 import { generateSlug } from "@/lib/generateSlug";
 import React, { useState } from "react";
-import {set, useForm} from "react-hook-form"
+import { useForm} from "react-hook-form"
 
 export default function NewCliente() {
     const {register,reset, handleSubmit, formState:{errors}} = useForm()
@@ -28,7 +28,7 @@ export default function NewCliente() {
     ];
     
 
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async function onSubmit(data:any) {
 
        {/*

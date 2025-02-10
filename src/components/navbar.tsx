@@ -1,13 +1,8 @@
 import React from "react";
-import { Search, User, User2 } from "lucide-react";
+import { Search, User } from "lucide-react";
 import TeamSwitcherBtn from "./ui/TeamSwitcher";
 export default function Navbar() {
 
-const navbarLinks =[
-  {title: "",
-   icon: ""
-  }
-]
 
 
 

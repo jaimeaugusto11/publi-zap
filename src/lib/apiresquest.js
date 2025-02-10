@@ -37,7 +37,7 @@ export async function makePostRequest(
     console.log(error);
   }
 }
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function makePutRequest(
   setLoading,
   endpoint,

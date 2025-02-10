@@ -5,7 +5,7 @@ import zapblast from "../../../public/img/top4/blast.png"
 import kanuca from "../../../public/img/top4/kanucatv.png"
 
 import SmallCard from './Cards/smallCards'
-import { ShoppingCart, CheckCheck, RefreshCcw , Truck} from 'lucide-react'
+
 
 export default function SmallCards() {
 

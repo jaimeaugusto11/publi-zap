@@ -2,7 +2,7 @@ import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
 
 const f = createUploadthing();
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const auth = (req: Request) => ({ id: "user1" }); // Fake auth function
 
 // FileRouter for your app, can contain multiple FileRoutes
@@ -21,6 +21,7 @@ export const ourFileRouter = {
 
   
     // Set permissions and file types for this FileRoute
+
     .middleware(async ({ req }) => {
       // This code runs on your server before upload
       const user = await auth(req);

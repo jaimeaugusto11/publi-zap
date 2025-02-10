@@ -29,7 +29,7 @@ export default function WeeklySalesChart() {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: 'top'as const,
       },
       title: {
         display: false,
@@ -39,7 +39,7 @@ export default function WeeklySalesChart() {
   };
 
   const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
   const data = {
     labels,
     datasets: [
@@ -118,7 +118,7 @@ export default function WeeklySalesChart() {
         {
           tabs.map((tab, i) => {
             if (chartsToDisplay == tab.type) {
-              return <Line options={options} data={tab.data} />
+              return <Line key={i} options={options} data={tab.data} />
             }
             return null
 

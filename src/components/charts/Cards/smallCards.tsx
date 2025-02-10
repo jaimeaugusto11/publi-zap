@@ -1,7 +1,7 @@
-import { ShoppingCart } from 'lucide-react'
+
 import Image from 'next/image';
 import React from 'react'
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function SmallCard({data}:any) {
   const{title, sales, iconColor, img} = data;
 

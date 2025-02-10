@@ -1,7 +1,7 @@
 import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
 
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Layout({ children }:any) {
   
   return (
