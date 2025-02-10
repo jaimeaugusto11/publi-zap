@@ -1,0 +1,57 @@
+name: Build Tauri App
+
+on:
+  push:
+    branches:
+      - main  # Você pode mudar para o nome do branch que usa
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Usando Ubuntu para o build
+
+    steps:
+    # Passo 1: Checkout do código
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Passo 2: Configurar o Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # A versão do Node.js que você está usando
+
+    # Passo 3: Instalar dependências com pnpm
+    - name: Install dependencies
+      run: |
+        npm install -g pnpm  # Instalar pnpm se necessário
+        pnpm install  # Instalar todas as dependências do projeto
+
+    # Passo 4: Configurar o Rust (necessário para o Tauri)
+    - name: Set up Rust
+      run: |
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+        source $HOME/.cargo/env  # Ativar o Rust no ambiente
+
+    # Passo 5: Instalar as dependências do Tauri
+    - name: Install Tauri CLI
+      run: cargo install tauri-cli
+
+    # Passo 6: Instalar dependências do frontend e compilar o Next.js
+    - name: Build frontend
+      run: |
+        pnpm build  # Ou o comando necessário para o build do seu frontend
+
+    # Passo 7: Compilar o aplicativo Tauri
+    - name: Build Tauri app
+      run: |
+        tauri build  # Comando para construir o aplicativo Tauri
+
+    # Passo 8: Carregar artefatos do build (executáveis gerados)
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: tauri-build
+        path: src-tauri/target/release/bundle  # Caminho para os executáveis gerados
