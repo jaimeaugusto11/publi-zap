@@ -5,7 +5,7 @@
   "identifier": "ao.co.zap.publiapp",
   "build": {
     "frontendDist": "../out",
-    "devUrl": "http://publi-zap.vercel.app",
+    "devUrl": "http://localhost:3000",
     "beforeDevCommand": "pnpm dev",
     "beforeBuildCommand": "pnpm build"
   },
