@@ -75,7 +75,7 @@ export async function makePutRequest(
 
 export async function makeGetRequest(setLoading, endpoint, setData) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+    const baseUrl = 'https://publi-api.vercel.app';
     console.log(baseUrl)
     
     // Realiza a requisição GET para o endpoint especificado
