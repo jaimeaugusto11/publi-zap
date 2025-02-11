@@ -4,12 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && tauri build",
+    "build": "next build",
     "start": "next start",
-     "export": "next export",
-    "lint": "next lint",
-    "tauri:dev": "tauri dev",
-    "tauri:build": "tauri build"
+    "lint": "next lint"
   },
   "dependencies": {
     "@faker-js/faker": "^9.4.0",
