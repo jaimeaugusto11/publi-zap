@@ -31,8 +31,7 @@ jobs:
 
     # Passo 4: Configurar o Rust (necessário para o Tauri)
     - name: Set up Rust
-      run: |
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+      run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
         source $HOME/.cargo/env  # Ativar o Rust no ambiente
 
     # Passo 5: Instalar as dependências do Tauri
