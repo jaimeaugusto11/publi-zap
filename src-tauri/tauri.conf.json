@@ -2,10 +2,10 @@
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "publi-app",
   "version": "0.1.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "ao.co.zap.publiapp",
   "build": {
     "frontendDist": "../out",
-    "devUrl": "http://localhost:3000",
+    "devUrl": "http://publi-zap.vercel.app",
     "beforeDevCommand": "pnpm dev",
     "beforeBuildCommand": "pnpm build"
   },
@@ -13,8 +13,8 @@
     "windows": [
       {
         "title": "Publi-Zap",
-        "width": 800,
-        "height": 600,
+        "width": 1024,
+        "height": 768,
         "resizable": true,
         "fullscreen": false
       }

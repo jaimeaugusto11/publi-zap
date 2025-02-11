@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
     unoptimized: true, // Desativa a otimização automática de imagens
     domains: ['utfs.io'], 
   },
-  //output:'export',
+  output:'standalone',
+  distDir: 'out',
   eslint: {
     ignoreDuringBuilds: true,
   },
