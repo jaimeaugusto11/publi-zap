@@ -1,11 +1,21 @@
-
+"use client";
+import CustomDataTable from "@/components/CustomDataTable";
 import PageHeader from "@/components/PageHeader";
 import TableAction from "@/components/TableAction";
+import { makeGetRequest } from "@/lib/apiresquest"
+import { Cliente } from "@/utils/types";
 
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function page() {
+
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<Cliente[]>([]);;
+
+  useEffect(() => {
+    makeGetRequest(setLoading, "api/clients", setData);
+  }, []);
+  
   return (
     <div>
       {/* Header */}
@@ -23,7 +33,7 @@ export default function page() {
      
      <div className="py-8">
 
-      <h2>Table</h2>
+      <CustomDataTable data_={data}/>
      </div>
     </div>
   );

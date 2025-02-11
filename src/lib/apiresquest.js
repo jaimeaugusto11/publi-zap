@@ -1,4 +1,5 @@
 // import { useRouter } from "next/navigation";
+
 import toast from "react-hot-toast";
 
 export async function makePostRequest(
@@ -18,8 +19,9 @@ export async function makePostRequest(
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
+      
     });
-
+    
     if (response.ok) {
       setLoading(false);
       toast.success(`New ${resourceName} Created Successfully`);
@@ -68,5 +70,37 @@ export async function makePutRequest(
   } catch (error) {
     setLoading(false);
     console.log(error);
+  }
+}
+
+export async function makeGetRequest(setLoading, endpoint, setData) {
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+    console.log(baseUrl)
+    
+    // Realiza a requisição GET para o endpoint especificado
+    const response = await fetch(`${baseUrl}/${endpoint}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      // Quando a requisição for bem-sucedida, convertemos os dados para JSON
+      const data = await response.json();
+      console.log(data)
+      setData(data); // Atualiza o estado com os dados recebidos
+      setLoading(false); // Define o carregamento como false
+    } else {
+      // Se a resposta não for OK, exibe uma mensagem de erro
+      setLoading(false);
+      toast.error("Something went wrong while fetching data");
+    }
+  } catch (error) {
+    // Caso haja erro na requisição (ex: erro de rede), trata o erro
+    setLoading(false);
+    console.error("Fetch error:", error);
+    toast.error("Error fetching data");
   }
 }
