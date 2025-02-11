@@ -21,7 +21,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16'  # A versão do Node.js que você está usando
+        node-version: '18.x'  # A versão do Node.js que você está usando
 
     # Passo 3: Instalar dependências com pnpm
     - name: Install dependencies
